@@ -1,5 +1,23 @@
+
 let emptyCells = document.querySelectorAll(".emptyCell");
 let cellPlacehoder = true;
+let board = ["","","","","","","","",""]
+let player = (marker , player) => {
+    return {marker , player}
+}
+
+// the event listener to manage the whole click thing
+emptyCells.forEach(cell => cell.addEventListener('click' , e => {
+
+    if (cellPlacehoder === true){
+        markGrid.Xstate(cell)
+    }else{
+        markGrid.Ostate(cell)
+    }
+}));    
+
+
+const winState = (() => {
 const winCombos = [
     [0,1,2],
     [0,3,6],
@@ -10,23 +28,21 @@ const winCombos = [
     [2,5,8],
     [0,4,8]
 ];
-let board = ["","","","","","","","",""]
-
-emptyCells.forEach(cell => cell.addEventListener('click' , e => {
-
-    if (cellPlacehoder === true){
-        Xstate(cell)
-    }else{
-        Ostate(cell)
-    }
-}));
 
 
+
+})
+
+
+
+
+
+
+let markGrid = (() => {
 function Xstate(cell){
     if (cell.innerHTML === "X" || cell.innerHTML === "O" ) return
     cellPlacehoder = false;
     cell.innerHTML = "X";
-    console.log(cell)
 }
 
 function Ostate(cell){
@@ -34,14 +50,14 @@ function Ostate(cell){
     cellPlacehoder = true;
     cell.innerHTML = "O";
     cell.style.color = "red"
-    console.log(cell)
 
 }
 
+function sayhi(){
+console.log("hi")}
 
-emptyCells.forEach(cell => cell.addEventListener('click' , e => {
-}));
-
-
-
+return {
+    Ostate , Xstate , sayhi
+}
+})();
 
