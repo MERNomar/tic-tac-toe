@@ -1,15 +1,20 @@
 html{
     background-color: black;
+    overflow-x: hidden;
 }
 header{
     color: wheat;
-    margin: auto;
-    width: 350px;
-    font-size: 50px;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: -50px;
+}
+footer{
+    text-align: center;
+    font-size: 25px;
 }
 .container{
     margin: auto;
-    margin-top: 10  px;
+    margin-top: 0px;
     background-color:wheat;
     width: 500px;
     height: 500px;
@@ -17,6 +22,7 @@ header{
     grid-template-columns: auto auto auto;
     cursor: pointer;
     -webkit-user-select: none;
+
 
 }
 .emptyCell{
@@ -31,4 +37,10 @@ header{
     
     
 
+}
+h1{
+    font-family: 'Borel', cursive;
+}
+.player-turn{
+    color:  rgb(132, 132, 209);
 }
